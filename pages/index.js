@@ -20,9 +20,7 @@ export default function Home({ pizzaList }) {
 }
 
 export const getServerSideProps = async (ctx) => {
-  const myCookie = ctx.req?.cookies || "";
-
-  const res = await axios.get("http://localhost:3000/api/products");
+  const res = await axios.get("https://cherrypizzas.vercel.app/api/products");
   return {
     props: {
       pizzaList: res.data,
